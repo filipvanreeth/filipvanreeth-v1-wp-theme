@@ -1,0 +1,7 @@
+@mixin font-default-settings {
+  font-family: $font1, $font-default-family;
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}

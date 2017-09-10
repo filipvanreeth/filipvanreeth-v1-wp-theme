@@ -1,0 +1,30 @@
+.block {
+
+  &__inside {
+    max-width: $ld;
+  }
+}
+
+.expertises {
+
+  &__content {
+    max-width: $ld;
+  }
+}
+
+.journal {
+
+  &--archive {
+
+    &__content {
+      max-width: $ld;
+    }
+  }
+}
+
+.copyright-social-media {
+
+  &__content {
+    max-width: $ld;
+  }
+}
