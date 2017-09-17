@@ -1,18 +1,24 @@
 <?php get_header(); ?>
 
-<div class="dev-block1">
-  <div class="dev-block1__content">
-    <?php the_title( '<h1>', '</h1>' ) ?>
-    <p class="text--medium"><?php echo get_the_excerpt() ?></p>
+<?php get_template_part( 'template-parts/logo-navigation' ) ?>
 
-  </div>
-  <div class="dev-block1__image">
-    <img src="http://lorempixel.com/1000/1000/business/" alt="">
+<div class="header-block1">
+  <div class="header-block1__content">
+    <div class="header-block1__content__content">
+      <?php the_title( '<h1>', '</h1>' ) ?>
+      <p class="text--medium"><?php echo get_the_excerpt() ?></p>
+    </div>
+    <div class="header-block1__content__image">
+      <div class="header-block1__content__image__overlay"></div>
+      <img src="http://lorempixel.com/1500/1000/business/" alt="" class="img--black-white">
+    </div>
   </div>
 </div>
 
-<div class="dev-block2">
-  <?php the_content() ?>
+<div class="content-block1">
+  <div class="content-block1__content">
+    <?php the_content() ?>
+  </div>
 </div>
 
 <?php get_footer(); ?>

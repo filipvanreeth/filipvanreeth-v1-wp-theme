@@ -5,6 +5,32 @@
   }
 }
 
+.logo-navigation {
+
+  &__content {
+    max-width: $ld;
+  }
+}
+
+.header-block1 {
+
+  &__content {
+
+    &__content {
+      margin-left: calc((100% - #{$ld}) / 2);
+    }
+  }
+}
+
+.content-block1 {
+  background: mix($white, $color1, 92.5%);
+
+  &__content {
+    max-width: $ld;
+    margin-right: auto;
+  }
+}
+
 .expertises {
 
   &__content {
@@ -23,6 +49,13 @@
 }
 
 .copyright-social-media {
+
+  &__content {
+    max-width: $ld;
+  }
+}
+
+.development-mode {
 
   &__content {
     max-width: $ld;

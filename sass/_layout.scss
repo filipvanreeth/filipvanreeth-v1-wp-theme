@@ -2,6 +2,11 @@
   font-size: 62.5%;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   @include font-default-settings;
   font-size: $font-default-size;
@@ -49,6 +54,12 @@ a {
   &:hover {
     color: $color2;
   }
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  //display: block;
 }
 
 .text {
@@ -103,6 +114,181 @@ a {
 
 .bg-color4 {
   background: $color4;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+.logo-navigation {
+
+  &__content {
+    margin: 0 auto;
+    padding: $padding * 2.5;
+    padding-left: $padding * 2;
+    padding-right: $padding * 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__logo {
+    flex: 1 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    align-items: center;
+
+    &__logo {
+      flex: 0 auto;
+      margin-right: $padding * 1.25;
+      box-sizing: border-box;
+
+      img {
+        display: inline-block;
+        width: auto;
+        height: 4.25em;
+        float: left;
+      }
+    }
+
+    &__content {
+      flex: 1 auto;
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 2em;
+        line-height: 1;
+        text-transform: uppercase;
+
+        span {
+          font-weight: bold;
+          color: $color2
+        }
+      }
+
+      &__baseline {
+        margin: 0;
+        margin-top: .15em;
+        padding: 0;
+        font-size: .80em;
+        //color: mix($white, $color1, 50%);
+        line-height: 1;
+      }
+    }
+  }
+
+  &__navigation {
+    flex: 1 auto;
+    margin-left: $padding * 4;
+    box-sizing: border-box;
+    text-align: right;
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      li {
+        flex: 0 auto;
+        margin: 0;
+        margin-left: $padding * 3;
+        padding: 0;
+        white-space: nowrap;
+
+        a {
+          margin: 0;
+          padding: 0;
+          line-height: 1;
+          font-size: 1.5em;
+          text-decoration: none;
+
+          &:hover {
+            color: $color2;
+            padding-bottom: .25em;
+            border-bottom: 2px solid $color2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-block1 {
+  position: relative;
+  z-index: 1;
+
+  &__content {
+    margin: 0 auto;
+    padding: 0;
+
+    &__content {
+      padding-left: $padding * 2;
+      padding-right: $padding * 2;
+      overflow: hidden;
+
+      .text--medium {
+        color: $color2;
+      }
+    }
+
+    &__image {
+      position: relative;
+      margin-left: $padding * 2;
+
+      &__overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color3;
+        mix-blend-mode: overlay;
+        z-index: 2;
+      }
+
+      img {
+        position: relative;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        z-index: 1;
+
+        &.img--black-white {
+          //filter: grayscale(1);
+        }
+      }
+    }
+  }
+}
+
+.content-block1 {
+  position: relative;
+  margin-top: -$padding * 2;
+  z-index: 2;
+
+  &__content {
+    margin: 0 auto;
+    margin-right: $padding * 2;
+    padding: $padding * 2;
+    background: mix($white, $color1, 92.5%);
+    overflow: hidden;
+  }
 }
 
 .page {
@@ -169,63 +355,12 @@ a {
   }
 }
 
-.dev-block1 {
-  margin: 0;
-  margin-top: $padding * 5;
-  padding: 0;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-
-  &__content {
-    margin-left: 12.5%;
-    margin-bottom: $padding * 5;
-    flex: 0 50%;
-    padding: $padding * 4;
-    box-sizing: border-box;
-
-    .text--medium {
-      color: $color2;
-    }
-  }
-
-  &__image {
-    position: relative;
-    flex: 0 50%;
-    overflow: hidden;
-    box-sizing: border-box;
-
-    img {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-
-.dev-block2 {
-  position: relative;
-  margin: 0 auto;
-  margin-top: -$padding * 5;
-  padding: $padding * 4;
-  background: mix($white, $color1, 95%);
-  max-width: 75%;
-  box-sizing: border-box;
-}
-
 .expertises {
 
   &__content {
     margin: 0 auto;
     padding-left: $padding * 2;
     padding-right: $padding * 2;
-    background: green;
 
     &__list {
       margin: 0;
@@ -242,12 +377,57 @@ a {
         //-webkit-transition: -webkit-transform 0s ease-in-out;
         //transition: transform 0s ease-in-out;
 
-        &:hover {
-          //-webkit-transform: rotate(-5deg);
-          //transform: rotate(-5deg);
-          color: $white;
-          background: $color2;
+        &--i-develop {
+
+          &:hover {
+            background: $color2;
+
+            h3 {
+              color: $white;
+            }
+          }
+
+          h3 {
+            color: $color2;
+          }
         }
+
+        &--i-coach {
+
+          &:hover {
+            background: $color3;
+
+            h3 {
+              color: $white;
+            }
+          }
+
+          h3 {
+            color: $color3;
+          }
+        }
+
+        &--i-speak {
+
+          &:hover {
+            background: $color4;
+
+            h3 {
+              color: $white;
+            }
+          }
+
+          h3 {
+            color: $color4;
+          }
+        }
+
+        // &:hover {
+        //   //-webkit-transform: rotate(-5deg);
+        //   //transform: rotate(-5deg);
+        //   color: $white;
+        //   background: $color2;
+        // }
 
         &:last-child {
           margin-right: 0;
@@ -255,6 +435,8 @@ a {
 
         h2 {
           font-size: 2.5em;
+          margin-top: .5em;
+          margin-bottom: .5em;
         }
 
         h3 {
@@ -311,13 +493,14 @@ a {
 
   &--archive {
     position: relative;
-    margin-top: $padding * 5;
+    margin-top: $padding * 3;
 
     &__content {
       position: relative;
       margin: 0 auto;
       padding: 0;
-      padding-top: $padding * 5;
+      padding-top: $padding * 3;
+      padding-bottom: $padding * 3;
       z-index: 2;
 
       &__icon {
@@ -349,6 +532,8 @@ a {
         margin: 0;
         margin-top: $padding * 5;
         padding: 0;
+        margin-left: $padding * 2;
+        margin-right: $padding * 2;
         list-style: none;
 
         &__item {
@@ -356,17 +541,51 @@ a {
           margin-bottom: $padding;
           padding: $padding * 2;
           box-sizing: border-box;
+          background: rgba($white, .50);
+          border: 1px solid rgba($color1, .10);
 
           &:hover {
-            //background: rgba($white, .85);
-
+            border: 1px solid rgba($color1, .25);
           }
 
           &--spotlight {
             border: 2px solid $color2;
 
+            &:hover {
+              border: 2px solid $color2;
+            }
+
             h2 {
               color: $color2;
+            }
+          }
+
+          &--more-newsletter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: 0;
+            border: 0;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+
+            &:hover {
+              border: 0;
+            }
+
+            img {
+              margin: 0 auto;
+              margin-bottom: 1em;
+            }
+
+            h3 {
+              color: $color2;
+              margin: 0;
+            }
+
+            p {
+              color: mix($white, $color1, 25%)
             }
           }
 
@@ -402,7 +621,7 @@ a {
         width: 100%;
         height: 100%;
         opacity: .10;
-        filter: invert(1);
+        //filter: invert(1);
       }
     }
   }
@@ -468,13 +687,13 @@ a {
 }
 
 .copyright-social-media {
+  margin-bottom: $padding * 2;
 
   &__content {
     margin: 0 auto;
     margin-top: $padding * 5;
     padding-left: $padding * 2;
     padding-right: $padding * 2;
-    margin-bottom: $padding * 2;
     display: flex;
     flex-direction: column;
 
@@ -535,6 +754,45 @@ a {
         margin: 0;
         padding: 0;
         color: mix($white, $color1, 50%);
+      }
+    }
+  }
+}
+
+.development-mode {
+  margin: 0;
+  padding: 0;
+  color: $white;
+  background: $color2;
+
+  &__content {
+    margin: 0 auto;
+    padding: $padding * 2;
+    padding-left: $padding * 2;
+    padding-right: $padding * 2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    &__icon {
+      flex: 0 auto;
+      margin-right: 2em;
+      box-sizing: border-box;
+
+      img {
+        display: block;
+      }
+    }
+
+    &__content {
+      flex: 1 auto;
+      box-sizing: border-box;
+
+      p {
+        margin: 0;
+        padding: 0;
       }
     }
   }
